@@ -1,7 +1,7 @@
 {% extends 'hod_template/base_template.html' %}
 
 {% block page_title %}
-    Manage Student
+    学生管理
 {% endblock page_title %}
 
 {% block main_content %}
@@ -43,7 +43,7 @@
                     <!-- general form elements -->
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Student Details</h3>
+                            <h3 class="card-title">学生详情</h3>
 
                             <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">
@@ -61,37 +61,37 @@
                             <thead>
                                 <tr>
                                 <th>ID</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
-                                <th>Email</th>
-                                <th>Address</th>
-                                <th>Gender</th>
-                                <th>Profile Pic</th>
-                                <th>Start Year</th>
-                                <th>End Year</th>
-                                <th>Course</th>
-                                <th>Last Login</th>
-                                <th>Date Joined</th>
-                                <th>Action</th>
+                                {% comment %} <th>First Name</th> {% endcomment %}
+                                <th>姓名</th>
+                                {% comment %} <th>Username</th> {% endcomment %}
+                                <th>邮件</th>
+                                {% comment %} <th>Address</th> {% endcomment %}
+                                <th>性别</th>
+                                <th>证件照</th>
+                                <th>入学时间</th>
+                                <th>毕业时间</th>
+                                {% comment %} <th>Course</th> {% endcomment %}
+                                <th>最近一次登录时间</th>
+                                {% comment %} <th>Date Joined</th> {% endcomment %}
+                                <th>操作</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for student in students %}
                                 <tr>
                                 <td>{{ student.admin.id }}</td>
-                                <td>{{ student.admin.first_name }}</td>
+                                {% comment %} <td>{{ student.admin.first_name }}</td> {% endcomment %}
                                 <td>{{ student.admin.last_name }}</td>
-                                <td>{{ student.admin.username }}</td>
+                                {% comment %} <td>{{ student.admin.username }}</td> {% endcomment %}
                                 <td>{{ student.admin.email }}</td>
-                                <td>{{ student.address }}</td>
+                                {% comment %} <td>{{ student.address }}</td> {% endcomment %}
                                 <td>{{ student.gender }}</td>
                                 <td> <img src="{{ student.profile_pic }}" style="width: 100px;" /> </td>
                                 <td>{{ student.session_year_id.session_start_year }}</td>
                                 <td>{{ student.session_year_id.session_end_year }}</td>
-                                <td>{{ student.course_id.course_name }}</td>
+                                {% comment %} <td>{{ student.course_id.course_name }}</td> {% endcomment %}
                                 <td>{{ student.admin.last_login }}</td>
-                                <td>{{ student.admin.date_joined }}</td>
+                                {% comment %} <td>{{ student.admin.date_joined }}</td> {% endcomment %}
                                 <td>
                                     <a href="{% url 'edit_student' student.admin.id %}" class="btn btn-success">Edit</a> 
                                     <a href="{% url 'delete_student' student.admin.id %}" class="btn btn-danger">Delete</a>

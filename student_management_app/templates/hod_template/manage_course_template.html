@@ -1,7 +1,7 @@
 {% extends 'hod_template/base_template.html' %}
 
 {% block page_title %}
-    Manage Course
+    课程管理
 {% endblock page_title %}
 
 {% block main_content %}
@@ -11,7 +11,7 @@
 <section class="content">
         <div class="container-fluid">
 
-            <a class="btn btn-primary" href="{% url 'add_course' %}" role="button">+ Add Course</a> <br/>&nbsp;
+            <a class="btn btn-primary" href="{% url 'add_course' %}" role="button">+ 添加课程</a> <br/>&nbsp;
 
             {% if messages %}
                                 <div class="form-group">
@@ -42,7 +42,7 @@
                     <!-- general form elements -->
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Course Details</h3>
+                            <h3 class="card-title">课程详情</h3>
 
                             <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">
@@ -60,10 +60,10 @@
                             <thead>
                                 <tr>
                                 <th>ID</th>
-                                <th>Course Name</th>
-                                <th>Created At</th>
-                                <th>Updated At</th>
-                                <th>Action</th>
+                                <th>课程名</th>
+                                <th>创建于</th>
+                                <th>更新于</th>
+                                <th>操作</th>
                                 </tr>
                             </thead>
                             <tbody>
